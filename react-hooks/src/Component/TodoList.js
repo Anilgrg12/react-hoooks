@@ -6,7 +6,7 @@ export default function TodoList() {
     return (
         <div>
             <h1>Things to be done </h1>
-            
+              <TodoForm /> 
         </div>
     )
 }
