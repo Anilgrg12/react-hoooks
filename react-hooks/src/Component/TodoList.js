@@ -2,11 +2,30 @@ import React, {useState} from 'react'
 import TodoForm from './TodoForm'
 
 export default function TodoList() {
-    const [todo, setTodo] = useState([])
+    const [todos, setTodos] = useState([]);
+
+    const addTodo = todo => {
+        if(!todo.text || /^\s*$/.test(todo.text)){
+            return;
+        }
+
+
+    const newTodos = [todo, ...todos];
+
+    setTodos(newTodos);
+    console.log(...todos)
+};
+
+const updateTodo = (todoId, newValue) => {
+    if(!newValue.text|| /^\s*$/.test(newValue.text)){
+        return;
+    }
+    setTodos(prev =>prev.map(item => (item.id === todoId ? newValue : item)))
+}
     return (
         <div>
             <h1>Things to be done </h1>
-              <TodoForm /> 
+            <TodoForm onSubmit = {addTodo} /> 
         </div>
     )
 }
