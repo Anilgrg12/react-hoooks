@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import TodoForm from './Todoform'
 import TodoList from './TodoList'
+import Todo from './Todo'
 
-export default function Todo() {
+import { RiCloseCircleLine } from 'react-icons/ri'
+
+export default function Todo({todos, completeTodo}) {
     const [edit, setEdit]= useState({
         id: null,
         value:''
@@ -16,6 +19,8 @@ export default function Todo() {
             </div>  
 
                      <div className = "icons" >
+                         <RiCloseCircleLine />
+                         <TiEdit />
 
                      </div>
         </div>
