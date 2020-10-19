@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import TodoForm from './Todoform'
 import TodoList from './TodoList'
-import Todo from './Todo'
 
 import { RiCloseCircleLine } from 'react-icons/ri'
 
