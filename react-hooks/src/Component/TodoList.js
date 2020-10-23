@@ -23,11 +23,23 @@ const updateTodo = (todoId, newValue) => {
     }
     setTodos(prev =>prev.map(item => (item.id === todoId ? newValue : item)))
 }
+
+const completeTodo = id => {
+    let updatedTodos = todos.map(todo => {
+        if (todo.id === id){
+            todo.isComplete = !todo.isComplete;
+        }
+    return todo;
+
+    })
+    setTodos(updatedTodos)
+
+};
     return (
         <div>
             <h1>Things to be done </h1>
             <TodoForm onSubmit = {addTodo} /> 
-            <Todo todos = {todos} />
+            <Todo todos = {todos} completeTodo = {completeTodo}/>
 
         </div>
     )
