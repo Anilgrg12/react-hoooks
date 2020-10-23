@@ -17,6 +17,11 @@ export default function TodoList() {
     console.log(...todos)
 };
 
+  const removeTodo = id => {
+      const removeArr = [...todos].filter(todo =>todo.id !== id)
+      setTodos(removeArr)
+  }
+
 const updateTodo = (todoId, newValue) => {
     if(!newValue.text|| /^\s*$/.test(newValue.text)){
         return;
@@ -39,7 +44,7 @@ const completeTodo = id => {
         <div>
             <h1>Things to be done </h1>
             <TodoForm onSubmit = {addTodo} /> 
-            <Todo todos = {todos} completeTodo = {completeTodo}/>
+            <Todo todos = {todos} completeTodo = {completeTodo} removeTodo = {removeTodo} updateTodo = {updateTodo}/>
 
         </div>
     )
