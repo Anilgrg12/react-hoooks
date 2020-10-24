@@ -114,7 +114,7 @@ h1 {
   );
 }
 
-.todo-row:nth-child(4n + 2) {
+.todo-row:nth-child(3n + 2) {
   background: linear-gradient(
     90deg,
     rgba(255, 12, 241, 1) 0%,
